@@ -22,6 +22,10 @@ class LightglassController extends AbstractActionController
 	{
 	}
 
+	public function projectAction()
+	{
+	}
+
 	public function addAction()
 	{
 	}
