@@ -1,9 +1,9 @@
 <?php echo $this->doctype(); ?>
 
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+		<?php echo $this->headTitle('Light-Glass.ru'); ?>
 
 		<?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
@@ -14,6 +14,7 @@
 		<!-- Scripts -->
 		<?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
 									  ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+									  ->prependFile($this->basePath() . '/js/lightglass.js')
 									  ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
 
 	</head>
@@ -26,12 +27,15 @@
 					<div class="header_up_orange">Написать сообщение, задать вопрос</div>
 				</div>
 				<ul class="header_main">
+					<?  $aUrl = parse_url( $_SERVER['REQUEST_URI'] );
+					    $sCurrent = ( !empty( $aUrl ) ) ? $aUrl['path'] : '';
+					?>
 					<li class="header_logo"></li>
 					<li class="delimer"></li>
-					<li class="menu_item"><a href="#" class="current"> О компании</a></li>
-					<li class="menu_item"><a href="#">Технологии и услуги</a></li>
-					<li class="menu_item"><a href="#">Вакансии</a></li>
-					<li class="menu_item"><a href="#">Контакты</a></li>
+					<li class="menu_item"><a href="/" <?=$sCurrent == '/' ? 'class="current"' : ''?>>О компании</a></li>
+					<li class="menu_item"><a href="/technology" <?=$sCurrent == '/technology' ? 'class="current"' : ''?>>Технологии и услуги </a></li>
+					<li class="menu_item"><a href="#" <?=$sCurrent == '#' ? 'class="current"' : ''?>>Вакансии</a></li>
+					<li class="menu_item"><a href="#" <?=$sCurrent == '#' ? 'class="current"' : ''?>>Контакты</a></li>
 					<li style="margin-left: 200px;"></li>
 					<li class="delimer"></li>
 					<li class="social">

@@ -18,11 +18,21 @@ return array(
 			'lightglass' => array(
 				'type'    => 'segment',
 				'options' => array(
-					'route'    => '/lightglass[/:action][/:id]',
+					'route'    => '/[:action][/:id]',
 					'constraints' => array(
 						'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
 						'id'     => '[0-9]+',
 					),
+					'defaults' => array(
+						'controller' => 'Lightglass\Controller\Lightglass',
+						'action'     => 'index',
+					),
+				),
+			),
+			'home' => array(
+				'type' => 'Zend\Mvc\Router\Http\Literal',
+				'options' => array(
+					'route'    => '/',
 					'defaults' => array(
 						'controller' => 'Lightglass\Controller\Lightglass',
 						'action'     => 'index',

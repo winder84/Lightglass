@@ -82,6 +82,10 @@ html, body {
 	font-size: 14px;
 }
 
+.menu_item a:hover {
+	text-shadow: 1px 1px 10px #87ceeb;
+}
+
 .menu_item .current {
 	background: url("../img/arrow.png") no-repeat 0px 6px;
 	padding-left: 5px;
@@ -282,4 +286,155 @@ html, body {
 	font-family: Arial;
 	font-size: 12px;
 	display: inline-block;
+}
+
+.technology {
+	width: 1150px;
+	margin-left: 70px;
+}
+
+.technology_left {
+	width: 250px;
+	height: 242px;
+	background: url("../img/man.png") no-repeat;
+	margin: 50px 0 0 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.technology_right {
+	display: inline-block;
+	width: 865px;
+	margin: 50px 0 50px 20px;
+}
+
+.technology_right h1 {
+	color: #666;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.technology_right p {
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 50px;
+}
+
+.tech_menu h1 {
+	color: #666;
+	font-family: Arial;
+	font-style: italic;
+	font-size: 16px;
+	margin-top: 50px;
+	display: inline-block;
+}
+
+.tech_undertext_del {
+	width: 785px;
+	height: 1px;
+	background: url("../img/tech_undertext_del.png") no-repeat;
+}
+
+.tech_g_del {
+	width: 1190px;
+	height: 1px;
+	background: url("../img/tech_g_del.png") no-repeat;
+	margin-left: 50px;
+}
+
+.tech_menu_items {
+	display: inline-block;
+	margin-left: 150px;
+}
+
+.tech_menu_items li {
+	list-style: none;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 10px;
+	font-style: italic;
+	border-top: 2px groove #ccc ;
+	border-right: 2px groove #ccc ;
+	border-left: 2px groove #ccc;
+	height: 30px;
+	vertical-align: top;
+}
+
+.tech_menu_items li a {
+	color: #666;
+	text-decoration: none;
+	vertical-align: middle;
+	display: block;
+	vertical-align: top;
+	height: 35px;
+	position: relative;
+	margin-top: 5px;
+	padding: 5px;
+}
+
+.tech_menu_items .current {
+	background: #ff9c00;
+}
+
+.tech_menu_items .current a {
+	color: #fff;
+}
+
+.tech_menu_del {
+	background: url("../img/techmenu_del.png") no-repeat;
+	width: 1190px;
+	height: 1px;
+	margin-top: -16px;
+	margin-left: -20px;
+}
+
+.tech_projects {
+	margin-top: 50px;
+	padding: 0;
+}
+
+.tech_projects_img {
+	width: 164px;
+	height: 164px;
+	background: url("../img/tech_projects_img_ex.png") no-repeat;
+}
+
+.tech_projects li {
+	list-style: none;
+	display: inline-block;
+	width: 164px;
+	margin-right: 5px;
+}
+
+.tech_projects h2 {
+	color: #666;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 0px;
+	font-style: italic;
+}
+
+.tech_projects h3 {
+	font-style: italic;
+	margin-top: 5px;
+	color: #ff9c00;
+	font-family: Arial;
+	font-size: 12px;
+	text-align: center;
+}
+
+.tech_projects p {
+	font-size: 10px;
+	margin-bottom: 0;
+	text-align: justify;
+}
+
+.tech_projects a {
+	color: #ff9c00;
+	font-size: 10px;
+	margin-left: 110px;
 }
