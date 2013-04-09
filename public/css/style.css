@@ -192,17 +192,20 @@ html, body {
 }
 
 .gal_menu {
-	margin-left: 50px;
+	margin-left: 30px;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .gal_menu li {
 	list-style: none;
+	/*list-style-image: url("../img/li_item_menu.png");*/
+	/*margin-top: 15px;*/
 }
 
 .gal_menu li a {
-	color: #333;
+	cursor: pointer;
+	color: #666;
 	text-decoration: none;
 	font-size: 16px;
 	line-height: 52px;
@@ -301,6 +304,24 @@ html, body {
 	vertical-align: top;
 }
 
+.contacts_left {
+	width: 250px;
+	height: 242px;
+	background: url("../img/contacts_book.png") no-repeat;
+	margin: 50px 0 0 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.jobs_left {
+	width: 250px;
+	height: 242px;
+	background: url("../img/jobs_man.png") no-repeat;
+	margin: 50px 0 0 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
 .technology_right {
 	display: inline-block;
 	width: 865px;
@@ -314,12 +335,75 @@ html, body {
 	font-style: italic;
 }
 
+.jobs_right {
+	display: inline-block;
+	width: 865px;
+	margin: 0 0 50px 20px;
+}
+
+.jobs_right h1 {
+	color: #666;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.tech_menu h2 {
+	display: inline-block;
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: normal;
+}
+
 .technology_right p {
 	color: #666;
 	font-family: Arial;
 	font-size: 14px;
 	font-style: italic;
 	margin-bottom: 50px;
+}
+
+.jobs_right p {
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 50px;
+}
+
+.jobs_right ul {
+	width: 400px;
+	display: inline-block;
+	padding: 0 0 0 5px;
+	vertical-align: top;
+	margin-right: 10px;
+}
+
+.jobs_right ul li {
+	list-style: none;
+}
+
+.jobs_right h2 {
+	color: #666;
+	font-family: Arial;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.right_right_jobs ul li {
+	color: #666;
+	font-family: Arial;
+	font-size: 12px;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.del_jobs {
+	background: url("../img/del_jobs.png");
+	height: 1px;
+	width: 100%;
 }
 
 .tech_menu h1 {
@@ -346,7 +430,7 @@ html, body {
 
 .tech_menu_items {
 	display: inline-block;
-	margin-left: 150px;
+	margin-left: 60px;
 }
 
 .project_menu_items {
@@ -481,4 +565,15 @@ html, body {
 .project_item {
 	width: 875;
 	margin-left: 10px;
+}
+
+.gal_m_i {
+	position: absolute;
+	display: none;
+}
+
+.contacts_map {
+	background: url("../img/contacts_map.png") no-repeat;
+	width: 289px;
+	height: 229px;
 }

@@ -9,3 +9,11 @@
 $(document).ready(function() {
 
 });
+
+function gal_show(id) {
+	$('#gal_m_' + id).fadeIn(100);
+}
+
+function gal_hide(id) {
+	$('#gal_m_' + id).fadeOut(100);
+}
