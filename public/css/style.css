@@ -264,13 +264,14 @@ html, body {
 }
 
 .par_logo {
-	background: url("../img/logo_global.png") no-repeat;
+	display: none;
 	width: 76px;
 	height: 86px;
 	margin: 20px;
 }
 
 .par_text {
+	display: none;
 	margin-top: 10px;
 	width: 250px;
 }

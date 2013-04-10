@@ -17,3 +17,12 @@ function gal_show(id) {
 function gal_hide(id) {
 	$('#gal_m_' + id).fadeOut(100);
 }
+
+function tech_b(id) {
+	$('#ins_text h1:visible').fadeOut(100, function() {
+		$('#ins_text div:visible:first').fadeOut(100, function() {
+			$('#tech_h1_'+id).fadeIn(100, function() {
+				$('#tech_text_'+id).fadeIn(100)})})})
+	$('.current').removeClass('current');
+	$('#t_b_'+id).attr('class','current');
+}
