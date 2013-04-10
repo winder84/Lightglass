@@ -11,23 +11,17 @@
 	</div>
 
 	<div class="technology_right project_item">
-		<h1>Проект для компании "<span style="color: #ff9c00;">Money Honey</span>"</h1>
+		<h1>Проект для компании "<span style="color: #ff9c00;"><?=$title?></span>"</h1>
 		<div style="width: 600px;">
-			<p>Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта. Описание текущего проекта.
-			</p>
+			<p><?=$desc?></p>
 		</div>
 		<div class="tech_undertext_del"></div>
 		<ul class="tech_projects prj_img">
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
-			<li class="project_imgs"></li>
+			<?php
+				foreach($img as $i) {
+					echo "<li class=\"project_imgs\"><img width=\"164\" height=\"164\" src=\"/img/$i\"></li>";
+				}
+			?>
 		</ul>
 	</div>
 </div>
