@@ -6,8 +6,10 @@
  * Time: 13:38
  * To change this template use File | Settings | File Templates.
  */
-
 namespace Lightglass;
+use Lightglass\Model\Lightglass;
+use Lightglass\Model\LightglassTable;
+use Zend\Db\ResultSet\ResultSet;
 
 class Module
 {
@@ -29,4 +31,17 @@ class Module
 	{
 		return include __DIR__ . '/config/module.config.php';
 	}
+
+    public function getServiceConfig()
+    {
+        return array(
+	        'factories' => array(
+		        'LightglassModelLightglassTable' =>  function($sm) {
+			        $dbAdapter = $sm->get('ZendDbAdapterAdapter');
+			        $table = new LightglassTable($dbAdapter);
+			        return $table;
+		        },
+	        ),
+        );
+    }
 }

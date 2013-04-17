@@ -1,0 +1,46 @@
+<div class="tech_g_del"></div>
+<div class="technology">
+
+	<div class="technology_left">
+	</div>
+
+	<div class="technology_right project_item">
+		<h3><?php echo $this->zfcUserDisplayName() ?>!</h3>
+		<a href="<?php echo $this->url('zfcuser/logout') ?>">[Выход]</a>
+		<a href="/admin">[Назад к админке]</a>
+		<div style="clear:both;"></div>
+		<br>
+		<form action="" method="POST">
+			<h1>Название проекта</h1>
+			<input name="pro_id" value="<?=$data['id']?>" hidden="true">
+			<input name="changed" value="1" hidden="true">
+			<input id="title" name="title" size="40" value='<?php if (isset($data["title"])) { echo $data["title"]; }?>'>
+			<div style="width: 600px;">
+				<br>
+				<h1>Краткое описание (для "Главной" и "Технологий и услуг")</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="desc_k" name="desc_k"><?php if (isset($data["desc_k"])) { echo $data["desc_k"]; }?></textarea></p>
+				<br>
+				<h1>Полное описание (для страницы проекта)</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="desc" name="desc"><?php if (isset($data["desc"])) { echo $data["desc"]; }?></textarea></p>
+				<h1>Логотип(для "Главной")</h1>
+				<input id="logo" name="logo" size="40" value='<?php if (isset($data["logo"])) { echo $data["logo"]; }?>'>
+			</div>
+			<br>
+			<br>
+			<button type="submit">Сохранить</button>
+		</form>
+		<br>
+		<div class="tech_undertext_del"></div>
+		<ul class="tech_projects prj_img">
+			<?php
+				if(isset($data)) {
+					for($i = 1; $i <= 10; $i++) {
+						if(file_exists($_SERVER['DOCUMENT_ROOT'] . "/img/pro_{$data['id']}_{$i}.jpg")) {
+							echo "<li class=\"project_imgs\"><img width=\"164\" height=\"164\" src=\"/img/pro_{$data['id']}_{$i}.jpg\"></li>";
+						}
+					}
+				}
+			?>
+		</ul>
+	</div>
+</div>

@@ -11,15 +11,19 @@
 	</div>
 
 	<div class="technology_right project_item">
-		<h1>Проект для компании "<span style="color: #ff9c00;"><?=$title?></span>"</h1>
+		<h1>Проект для компании "<span style="color: #ff9c00;"><?php if (isset($data['title'])) { echo $data['title']; }?></span>"</h1>
 		<div style="width: 600px;">
-			<p><?=$desc?></p>
+			<p><?php if (isset($data['desc'])) { echo $data['desc']; }?></p>
 		</div>
 		<div class="tech_undertext_del"></div>
 		<ul class="tech_projects prj_img">
 			<?php
-				foreach($img as $i) {
-					echo "<li class=\"project_imgs\"><img width=\"164\" height=\"164\" src=\"/img/$i\"></li>";
+				if(isset($data)) {
+					for($i = 1; $i <= 10; $i++) {
+						if(file_exists($_SERVER['DOCUMENT_ROOT'] . "/img/pro_{$data['id']}_{$i}.jpg")) {
+							echo "<li class=\"project_imgs\"><img width=\"164\" height=\"164\" src=\"/img/pro_{$data['id']}_{$i}.jpg\"></li>";
+						}
+					}
 				}
 			?>
 		</ul>

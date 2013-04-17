@@ -6,7 +6,7 @@
 			<li id="t_b_1" class="current"><a onclick="tech_b(1);" style="cursor: pointer;">Стеклянные перегородки</a></li>
 			<li id="t_b_2"><a onclick="tech_b(2);" style="cursor: pointer;">Стеклянные двери</a></li>
 			<li id="t_b_3"><a onclick="tech_b(3);" style="cursor: pointer;">Фасадное остекление</a></li>
-			<li id="t_b_4"><a onclick="tech_b(4);" style="cursor: pointer;">Оконн-дверные системы остекления</a></li>
+			<li id="t_b_4"><a onclick="tech_b(4);" style="cursor: pointer;">Оконно-дверные системы остекления</a></li>
 			<li id="t_b_5"><a onclick="tech_b(5);" style="cursor: pointer;">Автоматические системы</a></li>
 		</ul>
 		<div class="tech_menu_del"></div>
@@ -42,10 +42,10 @@
 					размер шва составляет порядка 20мм, таким образом создаётся впечатление общей целостности консрукции.
 				</p>
 			</div>
-			<h1 id="tech_h1_4" style="display: none;">Оконн-дверные системы остекления.</h1>
+			<h1 id="tech_h1_4" style="display: none;">Оконно-дверные системы остекления.</h1>
 			<div id="tech_text_4"  style="width: 600px; display: none;">
 				<p>Существует два типа алюминиевых конструкций : Холодный и тёплый.
-					Холодный тип – это однокамерные алюминиевые профиля применяемые внутри помещения.
+					Холодный тип – это однокамерные алюминиевые профили применяемые внутри помещения.
 					Но так же есть тёплый тип алюминиевого  профиля, это многокамерный профиль с применением термовставок,
 					данный профиль по своим характеристикам ни чем не уступает ПВХ профилям, а во многом даже превосходит.
 					При заказе алюминиевых конструкций в нашей компании вы можете выбрать любой цвет профиля по системе RAL,
@@ -68,34 +68,18 @@
 		</div>
 		<div class="tech_undertext_del"></div>
 		<ul class="tech_projects">
-			<li>
-				<div class="tech_projects_img"><img width="164" height="164" src="/img/volg_ae.jpg"></div>
-				<h2>Проект для компании</h2>
-				<h3>Волгодонска атомная электростанция</h3>
-				<p>Был произведён комплекс работ по реконструкции здания АБК Волгодонской АЭС. Были установлены алюминиевые фасадные конструкции с применением безопасного остекления. Входные группы выполнены с помощью автоматических систем GEZE (Германия)</p>
-				<a href="/project/1">Подробнее...</a>
-			</li>
-			<li>
-				<div class="tech_projects_img"><img width="164" height="164" src="/img/marccain_f.jpg"></div>
-				<h2>Проект для компании</h2>
-				<h3>Marc Cain</h3>
-				<p>Входная группа из закалённого стекла.</p>
-				<a href="/project/2">Подробнее...</a>
-			</li>
-			<li>
-				<div class="tech_projects_img"><img width="164" height="164" src="/img/bank_1.jpg"></div>
-				<h2>Проект для компании</h2>
-				<h3>Банк "Восточный Экспресс"</h3>
-				<p>Алюминиевые конструкции, внутренние перегородки из закаленного стекла, нанесение рисунка с помощью пескоструйной обработки.</p>
-				<a href="/project/3">Подробнее...</a>
-			</li>
-			<li>
-				<div class="tech_projects_img"><img width="164" height="164" src="/img/sanremo.jpg"></div>
-				<h2>Проект для компании</h2>
-				<h3>Пиццерия & Кафе <br> Сан-Ремо</h3>
-				<p></p>
-				<a href="/project/4">Подробнее...</a>
-			</li>
+			<?php
+				foreach($data as $oData) {
+					echo '<li>';
+						echo '<div class="tech_projects_img"><img width="164" height="164" src="/img/pro_' . $oData->id . '_1.jpg"></div>';
+						echo '<h2>Проект для компании</h2>';
+						echo '<h3>' . $oData->title . '</h3>';
+						echo '<p>' . $oData->desc_k . '</p>';
+						echo '<a href="/project/' . $oData->id . '">Подробнее...</a>';
+					echo '</li>';
+				}
+			?>
+
 		</ul>
 	</div>
 </div>

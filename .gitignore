@@ -7,3 +7,8 @@ nbproject
 .project
 .settings
 composer.lock
+conf/
+errordocs/
+logs/
+stat/
+

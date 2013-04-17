@@ -1,0 +1,52 @@
+<div class="tech_g_del"></div>
+<div class="technology">
+
+	<div class="technology_left">
+	</div>
+
+	<div class="technology_right project_item">
+		<h3><?php echo $this->zfcUserDisplayName() ?>!</h3>
+		<a href="<?php echo $this->url('zfcuser/logout') ?>">[Выход]</a>
+		<a href="/admin">[Назад к админке]</a>
+		<div style="clear:both;"></div>
+		<br>
+		<form action="" method="POST">
+			<h1>Название вакансии</h1>
+			<input name="job_id" value="<?=$data['id']?>" hidden="true">
+			<input name="changed" value="1" hidden="true">
+			<input id="title" name="title" size="40" value='<?php if (isset($data["title"])) { echo $data["title"]; }?>'>
+			<div style="width: 600px;">
+				<br>
+				<h1>Описание</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="desc" name="desc"><?php if (isset($data["desc"])) { echo $data["desc"]; }?></textarea></p>
+				<br>
+				<h1>Требования</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="requirements" name="requirements"><?php if (isset($data["requirements"])) { echo $data["requirements"]; }?></textarea></p>
+				<p style="color: red;">
+					Будьте внимательны!
+					<br>
+					Между требованиями необходимо ставить точку с запятой ";" !!!
+				</p>
+				<br>
+				<h1>Уровень зарплаты</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="salary" name="salary"><?php if (isset($data["salary"])) { echo $data["salary"]; }?></textarea></p>
+				<br>
+				<h1>Личные качества</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="qualities" name="qualities"><?php if (isset($data["qualities"])) { echo $data["qualities"]; }?></textarea></p>
+				<br>
+				<h1>Условия</h1>
+				<p><textarea style="width: 500px; height: 100px; border: 1px solid #000000; font-family: Arial;font-size: 14px; font-style: italic;" id="terms" name="terms"><?php if (isset($data["terms"])) { echo $data["terms"]; }?></textarea></p>
+				<p style="color: red;">
+					Будьте внимательны!
+					<br>
+					Между условиями необходимо ставить точку с запятой ";" !!!
+				</p>
+			</div>
+			<br>
+			<br>
+			<button type="submit">Сохранить</button>
+		</form>
+		<br>
+		<div class="tech_undertext_del"></div>
+	</div>
+</div>

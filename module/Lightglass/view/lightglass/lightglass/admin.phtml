@@ -1,0 +1,57 @@
+<div class="technology_left">
+</div>
+
+<div class="technology_right">
+	<div id="ins_text" style="height: 250px;">
+		<h3>Добрый день, <?php echo $this->zfcUserDisplayName() ?>!</h3>
+		<a href="<?php echo $this->url('zfcuser/logout') ?>">[Выход]</a>
+		<div style="clear:both;"></div>
+
+		<form action="/projectedit" method="post">
+			<br><br>
+			<label style="margin: 0 0 0 50px;">Проекты <a style="font-size: 10px;" href="/projectedit/0">Добавить</a></label>
+			<select onchange="changeSel();" style="margin: 0 0 0 50px;" name="pro_id">
+				<?php
+				foreach ($oProjects as $projects) {
+					?>
+					<option value="<?=$projects['id'] ?>"><?=$projects['title'] ?></option>
+				<?php } ?>
+			</select>
+			<input type="submit" value="Изменить">
+			<a id="pro_del" style="font-size: 10px;" href="/deletep/<?=$projects['id'] ?>">Удалить</a>
+		</form>
+
+		<form action="/jobsedit" method="post">
+			<br><br>
+			<label style="margin: 0 0 0 50px;">Вакансии <a style="font-size: 10px;" href="/jobsedit/0">Добавить</a></label>
+			<select onchange="changeSel();" style="margin: 0 0 0 50px;" name="job_id">
+				<?php
+				foreach ($oJobs as $jobs) {
+					?>
+					<option value="<?=$jobs['id'] ?>"><?=$jobs['title'] ?></option>
+				<?php } ?>
+			</select>
+			<input type="submit" value="Изменить">
+			<a id="job_del" style="font-size: 10px;" href="/deletej/<?=$jobs['id'] ?>">Удалить</a>
+		</form>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function()
+	{
+		pro_id = $("form select[name='pro_id'] option:selected").val();
+		job_id = $("form select[name='job_id'] option:selected").val();
+
+		$('#pro_del').attr('href', '/deletep/' + pro_id);
+		$('#job_del').attr('href', '/deletej/' + job_id);
+	});
+
+	function changeSel() {
+		pro_id = $("form select[name='pro_id'] option:selected").val();
+		job_id = $("form select[name='job_id'] option:selected").val();
+
+		$('#pro_del').attr('href', '/deletep/' + pro_id);
+		$('#job_del').attr('href', '/deletej/' + job_id);
+	}
+</script>

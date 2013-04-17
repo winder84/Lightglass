@@ -1,8 +1,8 @@
 <?php echo $this->doctype(); ?>
 
-<html lang="ru">
+<html lang="en">
 	<head>
-		<meta charset="utf-8">
+		<? header('Content-Type: text/html; charset=utf-8'); ?>
 		<?php echo $this->headTitle('Light-Glass.ru'); ?>
 
 		<?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
@@ -13,7 +13,6 @@
 
 		<!-- Scripts -->
 		<?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-									  ->prependFile($this->basePath() . '/js/bootstrap.min.js')
 									  ->prependFile($this->basePath() . '/js/lightglass.js')
 									  ->prependFile($this->basePath() . '/js/jquery.min.js') ?>
 
@@ -23,8 +22,9 @@
 			<div class="container">
 				<div class="header_up">
 					<div class="header_up_left">www.lightglass.ru \ О компании</div>
-					<a class="question_arrow"></a>
-					<div class="header_up_orange">Написать сообщение, задать вопрос</div>
+                    <div class="header_up_orange">Написать сообщение, задать вопрос
+                        <a onclick="question_form_show();" class="question_arrow"></a>
+                    </div>
 				</div>
 				<ul class="header_main">
 					<?  $aUrl = parse_url( $_SERVER['REQUEST_URI'] );
@@ -36,7 +36,7 @@
 					<li class="menu_item"><a href="/technology" <?=$sCurrent == '/technology' ? 'class="current"' : ''?>>Технологии и услуги </a></li>
 					<li class="menu_item"><a href="/jobs" <?=$sCurrent == '/jobs' ? 'class="current"' : ''?>>Вакансии</a></li>
 					<li class="menu_item"><a href="/contacts" <?=$sCurrent == '/contacts' ? 'class="current"' : ''?>>Контакты</a></li>
-					<li style="margin-left: 200px;"></li>
+					<li style="margin-left: 200px; height: 10px; width: 1px;"></li>
 					<li class="delimer"></li>
 					<li class="social">
 						<ul>
@@ -51,6 +51,27 @@
 							</li>
 						</ul>
 					</li>
+                    <div class="question_form">
+                        <div style="width: 480px;height: 0px; border: 1px dotted #fff; margin: 10px; opacity: 0;">
+                            <ul>
+                                <li>
+                                    <label>Имя:</label>
+                                    <input id="mail_name" type="text" style="margin-left: 10px; width: 176px;">
+                                    <label>e-mail:</label>
+                                    <input id="mail_email" type="text" style=" width: 176px;">
+                                    <label>Тема:</label>
+                                    <input id="mail_topic" type="text" style="margin-left: 6px; width: 176px;">
+                                </li>
+
+                                <li style="width: 200px;">
+                                    <label>Текст:</label>
+                                    <textarea id="mail_text" style="height: 90px;"></textarea>
+                                    <button onclick="mail_submit();">Отправить</button>
+                                </li>
+                            </ul>
+                            <a onclick="question_form_hide();" class="question_arrow_up"></a>
+                        </div>
+                    </div>
 				</ul>
 				<?php echo $this->content; ?>
 				<div class="footer">

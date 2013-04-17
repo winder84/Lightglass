@@ -1,0 +1,22 @@
+<div class="technology_left">
+</div>
+
+<div class="technology_right">
+	<div id="ins_text" style="height: 250px;">
+		<h3><?php echo $this->zfcUserDisplayName() ?>!</h3>
+		<a href="<?php echo $this->url('zfcuser/logout') ?>">[Выход]</a>
+		<a href="/admin">[Назад к админке]</a>
+		<div style="clear:both;"></div>
+
+		<form action="" method="post">
+			<br>
+			<br>
+			<label style="margin: 0 0 0 50px;font-size: 22px;">Удалить "<b><?=$aData['title']?></b>"?</label>
+			<br>
+			<input name="id" value="<?=$aData['id']?>" hidden="true">
+			<input name="module" value="jobs" hidden="true">
+			<input style="margin: 0 0 0 170px;font-size: 22px;" type="submit" name="del" value="Да">
+			<input style="margin: 0 0 0 50px;font-size: 22px;" type="submit" name="del" value="Нет">
+		</form>
+	</div>
+</div>
