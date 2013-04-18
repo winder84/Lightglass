@@ -37,27 +37,17 @@
 		<div class="clearfix"></div>
 		<a onclick="main_par_b(1);" style='width: 15px; height: 15px; background: url("../img/main_par_arrow_left.png") no-repeat; position: absolute; cursor: pointer;'></a>
 		<a onclick="main_par_b(2);" style='width: 15px; height: 15px; background: url("../img/main_par_arrow_right.png") no-repeat; position: absolute; margin-left: 17px; cursor: pointer;'></a>
-		<div id="par_logo_1" class="par_logo"></div>
-		<div id="par_id_1" class="par_text">
-			<p><span style="color: #87ceeb;">Волгодонская АЭС</span></p>
-			<p>Был произведён комплекс работ по реконструкции здания АБК</p>
-			<p>Были установлены алюминиевые фасадные конструкции с применением безопасного остекления.</p>
-		</div>
-		<div id="par_logo_2" class="par_logo" style='display: none; background: url("../img/marccain.png") no-repeat;'></div>
-		<div id="par_id_2" class="par_text" style='display: none;'>
-			<p>Волгодонск, бутик <span style="color: #87ceeb;">Marc Cain</span></p>
-			<p>Входная группа из закалённого стекла.</p>
-		</div>
-		<div id="par_logo_3" class="par_logo" style='display: none; background: url("../img/bank.png") no-repeat;'></div>
-		<div id="par_id_3" class="par_text" style="display: none;">
-			<p>Ростов-на-Дону Банк <span style="color: #87ceeb;">"Восточный Экспресс"</span></p>
-			<p>Алюминиевые конструкции, внутренние перегородки из закаленного стекла.</p>
-			<p>Нанесение рисунка с помощью пескоструйной обработки.</p>
-		</div>
-		<div id="par_logo_4" class="par_logo" style="display: none;"></div>
-		<div id="par_id_4" class="par_text" style="display: none;">
-			<p>Пиццерия & Кафе <span style="color: #87ceeb;">Сан-Ремо</span></p>
-			<p></p>
-		</div>
+		<?php
+		foreach ($oProjects as $key => $projects) {
+			?>
+			<div id="par_logo_<?=$key+1?>" class="par_logo" style='<?php if($key != 0){echo "display: none;";} ?> background: url("../img/<?=$projects['logo'] ?>") no-repeat;'></div>
+			<div id="par_id_<?=$key+1?>" class="par_text" style="<?php if($key != 0){echo 'display: none;';} ?>">
+				<p><span style="color: #87ceeb;"><?=$projects['title'] ?></span></p>
+				<p><?=$projects['desc_k'] ?></p>
+			</div>
+		<?php } ?>
+
+
+
 	</div>
 </div>

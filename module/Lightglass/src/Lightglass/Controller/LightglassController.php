@@ -18,6 +18,10 @@ class LightglassController extends AbstractActionController
 
 	public function indexAction()
 	{
+		$oProjects = $this->getLightglassTable()->fetchAll('projects');
+		return new ViewModel(array(
+			'oProjects' => $oProjects,
+		));
 	}
 
 	public function technologyAction()
