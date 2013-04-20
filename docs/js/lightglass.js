@@ -76,3 +76,41 @@ function mail_submit() {
             question_form_hide();
         });
 }
+
+$(function(){
+	var btnUpload=$('#upload');
+	var status=$('#status');
+	new AjaxUpload(btnUpload, {
+		action: 'upload.php',
+//Name of the file input box
+		name: 'uploadfile',
+		onSubmit: function(file, ext){
+			if (! (ext && /^(jpg|gif)$/.test(ext))){
+// check for valid file extension
+				status.text('Only JPG, PNG or GIF files are allowed');
+				return false;
+			}
+			status.text('Uploading...');
+		},
+		onComplete: function(file, response){
+//On completion clear the status
+			status.text('');
+//Add uploaded file to list
+				alert('Файл загружен. Вы можете загрузить еще.');
+				$("<li id=\"" + response + "\" class=\"project_imgs\"><img width=\"164\" height=\"164\" src=\"/img/" + response + "\"><a style=\"cursor: pointer; color: red;\" onClick=\"deleteImg('" + response + "');\">Удалить</a></li>").appendTo('#pro_imgs');
+		}
+	});
+});
+
+function deleteImg(imgName) {
+	if (confirm("Удалить "+imgName+"?")) {
+		$.post('deleteImg.php', {name: imgName})
+			.done(function(data) {
+				question_form_hide();
+				var imgO = document.getElementById(imgName);
+				imgO.remove();
+			});
+	} else {
+	}
+
+}
